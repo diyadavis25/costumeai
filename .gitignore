@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+data/raw/
+data/clothing/
+data/user_feedback.csv
+.venv/

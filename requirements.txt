@@ -1,0 +1,12 @@
+streamlit>=1.30
+numpy
+pandas
+scikit-learn
+opencv-python-headless
+pillow
+matplotlib
+joblib
+# Recommended (Member 1 & 2). The app still runs without them, with fallbacks noted in the README.
+xgboost
+torch
+torchvision
