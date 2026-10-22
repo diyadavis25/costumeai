@@ -8,7 +8,7 @@ import streamlit as st  # noqa: E402
 
 st.set_page_config(page_title="Outfit AI", page_icon="👗", layout="wide")
 
-from app import dashboard, login, ui  # noqa: E402
+from app import dashboard, login, occasion_ui, ui  # noqa: E402
 
 ui.inject_css()
 if not login.require_login():
@@ -36,3 +36,6 @@ with st.sidebar:
     "Model Performance": dashboard.page_performance,
     "About": dashboard.page_about,
 }[page]()
+
+if page in ("Analyze Outfit", "AI Analysis"):
+    occasion_ui.panel()

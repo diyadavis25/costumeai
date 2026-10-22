@@ -4,6 +4,7 @@ import numpy as np
 from .config import COMPAT_MODEL_PATH, SLOTS, SLOT_TITLE, score_label
 from .feature_engineering import item_matrix, outfit_features
 from .style_rules import color_harmony, pair_scores, visual_balance
+from .stylist import style_advice
 
 
 def item_row(item) -> np.ndarray:
@@ -101,5 +102,5 @@ def predict_compatibility(top_features, bottom_features, shoe_features, model=No
             "Category Match": None if cat_match is None else round(cat_match * 100),
         },
         "pair_harmony": {"top-bottom": pairs[0], "top-shoes": pairs[1], "bottom-shoes": pairs[2]},
-        "tips": _tips(items, pairs, balance),
+        "tips": style_advice(items, pairs, balance, score),
     }
